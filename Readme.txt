@@ -8,3 +8,7 @@ To run this project follow the given insttrutions
 6. Run php artisan serve
 
 Note: Don't forget to import db file in your database 
+
+username:samirhusen18@gmail.com
+
+password:12345678
