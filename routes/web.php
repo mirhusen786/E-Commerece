@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\TaxController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\HomeBannerController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Front\FrontController;
 /*
 |--------------------------------------------------------------------------
@@ -118,6 +119,9 @@ Route::get('admin/homebanner/delete/{id}',[HomeBannerController::class,'delete']
 Route::get('admin/homebanner/status/{status}/{id}',[HomeBannerController::class,'status']);
 
 
+// ............Order Route........................
+
+Route::get('admin/order',[OrderController::class,'index']);
 
 
 // Route::get('admin/updatepassword',[AdminController::class,'updatepassword']);

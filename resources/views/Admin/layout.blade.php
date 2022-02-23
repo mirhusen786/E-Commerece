@@ -180,6 +180,12 @@
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                            
                         </li>
+
+                        <li class="@yield('Order_select')">
+                            <a  href="{{url('admin/order')}}">
+                                <i class="fas fa-list"></i>Order</a>
+
+                            </li>        
                        
                         <li class="@yield('Category_select')">
                             <a  href="{{url('admin/category')}}">
