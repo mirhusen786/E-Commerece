@@ -28,7 +28,7 @@
                                         <tbody>
                                        @foreach($orders as $list)
                                        <tr>
-                                           <td><a href="{{url('order_detail')}}/{{{$list->id}}}">{{$list->id}}</a></td>
+                                           <td><a href="{{url('admin/order_detail')}}/{{{$list->id}}}">{{$list->id}}</a></td>
                                            <td>{{$list->added_on}}</td>
                                            <td>{{$list->name}}<br>
                                             {{$list->email}}<br>

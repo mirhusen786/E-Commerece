@@ -808,7 +808,12 @@ $result['orders']=DB::table('orders')
     ->leftJoin('orders_status','orders_status.id','=','orders.order_status')
     ->leftJoin('colors','colors.id','=','products_attr.color_id')
     ->where(['orders.id'=>$id])
+    ->where(['orders.customers_id'=>$request->session()->get('FRONT_USER_ID')])
     ->get();
+if(!isset($result['orders_details'][0]))
+{
+    return redirect('/');
+}
 // prx($result['orders_details']);
       return view('Frontend.Product.order_detail',$result);
  }
