@@ -4,25 +4,7 @@
 @section('container')
 
 <!-- display msg -->
-
-@if(session()->has('message'))
-<div class="sufee-alert alert with-close alert-warning alert-dismissible fade show">
-											<span class="badge badge-pill badge-warning">Success</span>
-                                            {{session('message')}}
-											<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-												<span aria-hidden="true">×</span>
-											</button>
-										</div>
-@endif
-
-
-     <h1 class="mb10">Product</h1>
-     <a href="product/manage_product">
-     <button type="button" class="btn btn-success">Add Product
-
-     </button>
-    </a>
-    
+<h1 class="mb10">Order</h1>
      <div class="row m-t-30">
                             <div class="col-md-12">
                                 <!-- DATA TABLE-->
@@ -33,17 +15,34 @@
                                     <table class="table table-borderless table-data3">
                                         <thead>
                                             <tr>
-                                                <th>ID</th>
-                                                <th>Product Name</th>
-                                                <th>Product Image</th>
-                                                <th>Product slock</th>
-                                                <th>Status</th>
+                                                <th>Order ID</th>
+                                                <th>Order Date</th>
+                                                <th>Customer Details</th>
+                                                <th>Amount</th>
+                                                <th>Order Status</th>
+                                                <th>Payment Status</th>
                                                 <th>Action</th>
                                                 
                                             </tr>
                                         </thead>
                                         <tbody>
-                                       
+                                       @foreach($orders as $list)
+                                       <tr>
+                                           <td><a href="{{url('order_detail')}}/{{{$list->id}}}">{{$list->id}}</a></td>
+                                           <td>{{$list->added_on}}</td>
+                                           <td>{{$list->name}}<br>
+                                            {{$list->email}}<br>
+                                            {{$list->address}}<br>
+                                            {{$list->mobile}}<br>
+                                           
+                                        
+                                        </td>
+                                           <td>{{$list->total_amt}}</td>
+                                           <td>{{$list->order_status}}</td>
+                                           <td>{{$list->payment_status}}</td>
+                                           <td>{{$list->total_amt}}</td>
+                                       </tr>
+                                       @endforeach
                                         </tbody>
                                     </table>
                                 </div>
