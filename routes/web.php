@@ -122,6 +122,7 @@ Route::get('admin/homebanner/status/{status}/{id}',[HomeBannerController::class,
 // ............Order Route........................
 
 Route::get('admin/order',[OrderController::class,'index']);
+Route::get('admin/order_detail/{id}',[OrderController::class,'order_detail']);
 
 
 // Route::get('admin/updatepassword',[AdminController::class,'updatepassword']);
