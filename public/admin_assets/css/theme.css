@@ -14654,3 +14654,7 @@ section {
     margin-bottom:10px;
 }
 
+.whitebg{
+    background-color: white;
+    padding:20px;
+}

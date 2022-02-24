@@ -4,7 +4,7 @@
 @section('container')
 
 <h1 class="mb10">Order -  {{$orders_details[0]->id}}</h1>
-<div class="row m-t-30">
+<div class="row m-t-30 whitebg">
 <div class="col-md-6">
     <div class="order_detail">
         <h3>Details Address</h3>
@@ -12,7 +12,7 @@
       </div> 
   </div>
   <div class="col-md-6">
-      <div class="order_detail">
+      <div class="order_detail" align="right">
         <h3>Order Details</h3>
          Order Status: {{$orders_details[0]->orders_status}}<br/>
          Payment Status: {{$orders_details[0]->payment_status}}<br/>
@@ -30,7 +30,7 @@
    <div class="col-md-12">
      <div class="cart-view-area">
        <div class="cart-view-table">
-         <form action="">
+       
          
            <div class="table-responsive">
               <table class="table order_detail">
@@ -88,7 +88,7 @@
                 </tbody>
               </table>
             </div>
-         </form>
+         
          <!-- Cart Total view -->
        
        </div>
