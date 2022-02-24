@@ -21,7 +21,7 @@
                                                 <th>Amount</th>
                                                 <th>Order Status</th>
                                                 <th>Payment Status</th>
-                                                <th>Action</th>
+                                              
                                                 
                                             </tr>
                                         </thead>
@@ -38,9 +38,31 @@
                                         
                                         </td>
                                            <td>{{$list->total_amt}}</td>
-                                           <td>{{$list->order_status}}</td>
-                                           <td>{{$list->payment_status}}</td>
-                                           <td>{{$list->total_amt}}</td>
+                                           <td>
+                                               @if($list->order_status==1)
+                                         
+                                            <button type="button" class="btn btn-warning">Placed</button>
+
+                                          @elseif($list->order_status==2)
+                                              <button type="button" class="btn btn-warning">On the Way</button>
+                                          @else
+                                              <button type="button" class="btn btn-success">Delivered</button>
+                                          @endif
+                                            
+                                            </td>
+                                           <td>
+                                            @if($list->payment_status=="Success")
+                                         
+                                            <button type="button" class="btn btn-success">Success</button>
+
+                                          @elseif($list->payment_status=="Pending")
+                                              <button type="button" class="btn btn-warning">Pending</button>
+                                          @else
+                                              <button type="button" class="btn btn-danger">Failed</button>
+                                          @endif
+                                        
+                                            </td>
+                                         
                                        </tr>
                                        @endforeach
                                         </tbody>

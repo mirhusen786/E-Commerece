@@ -91,46 +91,46 @@
                         </li>
                         <li class="has-sub">
                             <a class="js-arrow" href="{{url('admin/coupon')}}">
-                                <i class="fas fa-desktop"></i>Coupon</a>
+                                <i class="fas fa-tag"></i>Coupon</a>
 
                             </li>
                             <li class="has-sub">
                             <a class="js-arrow" href="{{url('admin/size')}}">
-                                <i class="fas fa-desktop"></i>Size</a>
+                                <i class="fas fa-window-maximize"></i>Size</a>
 
                             </li>
                             <li class="has-sub">
                             <a class="js-arrow" href="{{url('admin/color')}}">
-                                <i class="fas fa-desktop"></i>Color</a>
+                                <i class="fas fa-paint-brush"></i>Color</a>
 
                             </li>
                             <li class="@yield('tax_select')">
                             <a href="{{url('admin/tax')}}">
-                                <i class="fab fa-product-hunt"></i>Tax</a>
+                                <i class="fas fa-percent"></i>Tax</a>
                            
                         </li>
                           
                             <li class="@yield('brand_select')">
                             <a href="{{url('admin/brand')}}">
-                                <i class="	fab fa-product-hunt"></i>Product Brands</a>
+                                <i class="fas fa-bold"></i>Product Brands</a>
                            
                         </li>
 
                         <li class="@yield('homebanner_select')">
                             <a href="{{url('admin/homebanner')}}">
-                                <i class="	fab fa-product-hunt"></i>Home Banner</a>
+                                <i class="fab fa-product-hunt"></i>Home Banner</a>
                            
                         </li>
 
                             <li class="has-sub">
                             <a class="js-arrow" href="{{url('admin/product')}}">
-                                <i class="fas fa-desktop"></i>Products</a>
+                                <i class="fab fa-product-hunt"></i>Products</a>
 
                             </li>
 
                             <li class="has-sub">
                             <a class="js-arrow" href="{{url('admin/customer')}}">
-                                <i class="fas fa-desktop"></i>Customers</a>
+                                <i class="fas fa-user"></i>Customers</a>
 
                             </li>
                             
@@ -183,7 +183,7 @@
 
                         <li class="@yield('Order_select')">
                             <a  href="{{url('admin/order')}}">
-                                <i class="fas fa-list"></i>Order</a>
+                                <i class="fas fa-shopping-basket"></i>Order</a>
 
                             </li>        
                        
@@ -224,7 +224,7 @@
 
                         <li class="@yield('Tax_select')">
                             <a href="{{url('admin/tax')}}">
-                                <i class="fas fa-paint-brush"></i>Tax</a>
+                                <i class="fas fa-percent"></i>Tax</a>
                            
                         </li>
 

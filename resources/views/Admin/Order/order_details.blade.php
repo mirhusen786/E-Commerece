@@ -2,8 +2,47 @@
 @section('page_title','Order Details')
 @section('Orde_select','active')
 @section('container')
-
 <h1 class="mb10">Order -  {{$orders_details[0]->id}}</h1>
+
+
+    <div class="order_operation">
+           <b>Update Order Status </b>
+           <select class="form-control m-b-10" id="order_status" onchange="update_order_status({{$orders_details[0]->id}})">
+              <?php
+              foreach($orders_status as $list){
+                  if($orders_details[0]->order_status==$list->id){
+                     echo "<option value='".$list->id."' selected>".$list->orders_status."</option>";      
+                  }else{
+                     echo "<option value='$list->id'>".$list->orders_status."</option>";   
+                  }      
+              }
+              ?>
+           </select>       
+
+           <b>Update Payment Status </b>
+           <select class="form-control  m-b-10" id="payment_status" onchange="update_payment_status({{$orders_details[0]->id}})">
+              <?php
+              foreach($payment_status as $list){
+                  if($orders_details[0]->payment_status==$list){
+                     echo "<option value='$list' selected>$list</option>";      
+                  }else{
+                     echo "<option value='$list'>$list</option>";   
+                  }      
+              }
+              ?>
+           </select>        
+           
+           <b>Track Details</b>
+           <form method="post">
+              <textarea name="track_details" class="form-control  m-b-10" required>{{$orders_details[0]->track_details}}</textarea>
+              <button type="submit" class="btn btn-success">
+                Update
+            </button>
+            @csrf
+           </form>
+
+    </div> 
+
 <div class="row m-t-30 whitebg">
 <div class="col-md-6">
     <div class="order_detail">
@@ -97,19 +136,5 @@
  
 </div>
 
-<div class="order_operation">
-  <b>Update Order Status</b>
-  <select class="form-control m-b-10">
-    <option value="">Select Status</option>
-  </select>
-
-  <b>Payment Status Status</b>
-  <select class="form-control m-b-10">
-    @foreach($payment_status as $list)
-    <option value="">Select Status</option>
-    @endforeach 
-  </select>
-
-</div>
-                    
+                
 @endsection

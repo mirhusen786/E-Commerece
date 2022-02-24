@@ -123,6 +123,9 @@ Route::get('admin/homebanner/status/{status}/{id}',[HomeBannerController::class,
 
 Route::get('admin/order',[OrderController::class,'index']);
 Route::get('admin/order_detail/{id}',[OrderController::class,'order_detail']);
+Route::post('admin/order_detail/{id}',[OrderController::class,'update_track_detail']);
+Route::get('admin/update_payemnt_status/{status}/{id}',[OrderController::class,'update_payemnt_status']);
+Route::get('admin/update_order_status/{status}/{id}',[OrderController::class,'update_order_status']);
 
 
 // Route::get('admin/updatepassword',[AdminController::class,'updatepassword']);

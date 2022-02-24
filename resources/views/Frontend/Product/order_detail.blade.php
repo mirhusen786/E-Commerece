@@ -18,13 +18,13 @@
       <div class="row">
        <div class="col-md-6">
          <div class="order_details">
-             <h3>Details Address</h3>
+             <h3><b>Details Address</b></h3>
               Name: {{$orders_details[0]->name}}({{$orders_details[0]->mobile}}) <br/> Address: {{$orders_details[0]->address}}<br/>City: {{$orders_details[0]->city}}</br>State :{{$orders_details[0]->state}}</br/>Zip Code{{$orders_details[0]->pincode}}
            </div> 
        </div>
        <div class="col-md-6">
            <div class="order_detail">
-             <h3>Order Details</h3>
+             <h3><b>Order Details</b></h3>
               Order Status: {{$orders_details[0]->orders_status}}<br/>
               Payment Status: {{$orders_details[0]->payment_status}}<br/>
               Payment Type: {{$orders_details[0]->payment_type}}<br/>
@@ -35,6 +35,8 @@
               ?>
               
            </div> 
+          <h3> <b>Track Details</b></h3><br/>
+           {{$orders_details[0]->track_details}} 
        </div>
       
  

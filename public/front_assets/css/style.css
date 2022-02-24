@@ -4262,11 +4262,11 @@ option{
 .order_detail{
   float:right;
   margin-bottom: 10px;
-  font-weight:bold;
+  /* font-weight:bold; */
   }
 
   .order_details{
    
     margin-bottom: 10px;
-    font-weight:bold;
+    /* font-weight:bold; */
     }
