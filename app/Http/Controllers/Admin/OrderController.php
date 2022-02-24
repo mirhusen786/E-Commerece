@@ -31,6 +31,7 @@ $result['orders']=DB::table('orders')
     ->leftJoin('colors','colors.id','=','products_attr.color_id')
     ->where(['orders.id'=>$id])
     ->get();
+    $result['payment_status']=['Pending','Success','Fail'];
 // prx($result['orders_details']);
 return view('Admin.Order.order_details',$result);
  

@@ -96,5 +96,20 @@
    </div>
  
 </div>
+
+<div class="order_operation">
+  <b>Update Order Status</b>
+  <select class="form-control m-b-10">
+    <option value="">Select Status</option>
+  </select>
+
+  <b>Payment Status Status</b>
+  <select class="form-control m-b-10">
+    @foreach($payment_status as $list)
+    <option value="">Select Status</option>
+    @endforeach 
+  </select>
+
+</div>
                     
 @endsection
