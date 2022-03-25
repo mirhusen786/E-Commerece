@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\TaxController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\HomeBannerController;
 use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\Front\FrontController;
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +44,10 @@ Route::get('admin/category/manage_category/{id}',[CategoryController::class,'man
 Route::post('admin/category/manage_category_process',[CategoryController::class,'manage_category_process'])->name('category.manage_category_process');
 Route::get('admin/category/delete/{id}',[CategoryController::class,'delete']);
 Route::get('admin/category/status/{status}/{id}',[CategoryController::class,'status']);
+
+
+// ............Report Route........................
+Route::get('admin/report',[ReportController::class,'index']);
 
 
 // ............Coupon Route........................

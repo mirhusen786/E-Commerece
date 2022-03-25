@@ -170,6 +170,9 @@ class FrontController extends Controller
         $pqty=$request->post('pqty');
         $product_id=$request->post('product_id');
 
+
+       
+
         $result=DB::table('products_attr')
             ->select('products_attr.id')
             ->leftJoin('sizes','sizes.id','=','products_attr.size_id')
@@ -180,7 +183,16 @@ class FrontController extends Controller
             ->get();
         $product_attr_id=$result[0]->id;
 
+        // $getAvaliableQty=getAvaliableQty($product_id,$product_attr_id);
 
+        // $finalAvaliable=$getAvaliableQty[0]->pqty-$getAvaliableQty[0]->qty;
+
+        // if($pqty>$finalAvaliable)
+        // {
+        //      return response()->json(['msg'=>"not avaliable",'data'=>"Only $finalAvaliable Left"]);
+        // }
+
+       
         $check=DB::table('cart')
             ->where(['user_id'=>$uid])
             ->where(['user_type'=>$user_type])

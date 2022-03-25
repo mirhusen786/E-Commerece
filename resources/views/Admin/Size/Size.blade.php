@@ -2,8 +2,14 @@
 @section('page_title','Size')
 @section('Size_select','active')
 @section('container')
-
-
+<style>
+.btn-danger {
+    color: #fff;
+    background-color: white;
+    border-color: none;
+    border:none;
+}
+</style>
 @if(session()->has('message'))
                              <div class="sufee-alert alert with-close alert-warning alert-dismissible fade show">
 											<span class="badge badge-pill badge-warning">Success</span>
@@ -21,13 +27,14 @@
 
      </button>
     </a>
-    
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+   
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
      <div class="row m-t-30">
                             <div class="col-md-12">
                                 <!-- DATA TABLE-->
                             
-                                {{session('message')}}
-
+                              
                                 <div class="table-responsive m-b-40">
                                     <table class="table table-borderless table-data3">
                                         <thead>
@@ -62,8 +69,19 @@
                                                 <td>
                                                     <a href="{{url('admin/size/manage_size/')}}/{{$data->id}}"> <i class="fas fa-edit"></i> </a>
 
-                                                    &nbsp;  &nbsp;
-                                                    <a href="{{url('admin/size/delete')}}/{{$data->id}}"> <i class="fas fa-trash"></i> </a> 
+                                                    
+
+                                                    <form method="get" action="{{url('admin/size/delete')}}/{{$data->id}}"">
+                                                        @csrf
+                                                   
+                                                        {{-- <input name="_method" type="hidden" value="DELETE"> --}}
+                                                      
+                                                      <a class="btn btn-xs btn-danger btn-flat show_confirm">  {{-- <button type="submit" class="btn btn-xs btn-danger btn-flat show_confirm" data-toggle="tooltip" title='Delete'>Delete</button> --}}
+                                                        <i class="fas fa-trash"></i> 
+                                                      </a>
+                                                    
+                                                   
+                                                </form>
                                                 </td>
                                               
                                             </tr>
@@ -74,5 +92,29 @@
                                 <!-- END DATA TABLE-->
                             </div>
                         </div>
+
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+<script type="text/javascript">
+ 
+     $('.show_confirm').click(function(event) {
+          var form =  $(this).closest("form");
+          var name = $(this).data("name");
+          event.preventDefault();
+          swal({
+              title: `Are you sure you want to delete this record?`,
+              text: "If you delete this, it will be gone forever.",
+              icon: "warning",
+              buttons: true,
+              dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              form.submit();
+            }
+          });
+      });
+  
+</script>
 
 @endsection

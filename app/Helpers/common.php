@@ -147,4 +147,17 @@ function apply_coupon_code($coupon_code){
 	return json_encode(['status'=>$status,'msg'=>$msg,'totalPrice'=>$totalPrice,'coupon_code_value'=>$coupon_code_value]);
 }
 
+
+function getAvaliableQty($product_id,$attr_id){
+	$result=DB::table('orders_details')
+            ->leftJoin('orders','orders.id','=','orders_details.orders_id')
+			->leftJoin('products_attr','products_attr.id','=','orders_details.products_attr_id')
+            ->where(['orders_details.product_id'=>$product_id])
+            ->where(['orders_details.products_attr_id'=>$attr_id])
+            ->select('orders_details.qty','products_attr.qty as pqty')
+            ->get();
+
+	return $result;
+}
+
 ?>

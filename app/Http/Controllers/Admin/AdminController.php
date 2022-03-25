@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Admin\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -61,7 +62,18 @@ else{
 
     public function dashboard()
     {
-        return view('Admin.dashboard');
+       $customers=DB::table('customers')->count('name');
+       $acustomers=DB::table('customers')->where('status','1')->count('name');
+       $dcustomers=DB::table('customers')->where('status','0')->count('name');
+       $total=DB::table('orders')->sum('total_amt');   
+       $placed=DB::table('orders')->where('order_status','1')->count('order_status');  
+       $otway=DB::table('orders')->where('order_status','2')->count('order_status'); 
+       $delevered=DB::table('orders')->where('order_status','3')->count('order_status');
+       $successpayment=DB::table('orders')->where('payment_status','Success')->count('payment_status');
+
+
+       $data=compact('customers','acustomers','dcustomers','total','placed','otway','delevered','successpayment');
+        return view('Admin.dashboard')->with($data);
     }
     public function updatepassword()
     {

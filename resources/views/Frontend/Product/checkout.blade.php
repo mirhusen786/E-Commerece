@@ -152,9 +152,9 @@
                   <h4>Payment Method</h4>
                   <div class="aa-payment-method">                    
                     <label for="cod"><input type="radio" id="cod" name="payment_type" value="COD" checked> Cash on Delivery </label>
-                    <label for="instamojo">
+                    {{-- <label for="instamojo">
                     <input type="radio" id="instamojo" name="payment_type" value="Gateway"> Via Instamojo </label>
-                    
+                     --}}
                     <input type="submit" value="Place Order" class="aa-browse-btn" id="btnPlaceOrder">                
                   </div>
 

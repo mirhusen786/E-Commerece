@@ -169,7 +169,9 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                    <img src="{{asset('admin_assets/images/icon/logo.png')}}" alt="Cool Admin" />
+
+                    <h2>Your Shopping</h2>
+                    {{-- <img src="{{asset('admin_assets/images/icon/logo.png')}}" alt="Cool Admin" /> --}}
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
@@ -247,6 +249,12 @@
                         <li class="@yield('Customer_select')">
                             <a href="{{url('admin/customer')}}">
                                 <i class="fa fa-user"></i>Customers</a>
+                           
+                        </li>
+
+                        <li class="@yield('Report_select')">
+                            <a href="{{url('admin/report')}}">
+                                <i class="fa fa-user"></i>Report</a>
                            
                         </li>
                     </ul>
