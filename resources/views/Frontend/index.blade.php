@@ -69,7 +69,7 @@
                 <!-- start prduct navigation -->
                  <ul class="nav nav-tabs aa-products-tab">
                  @foreach($home_categories as $list)
-                    <li class=""><a href="#cat{{$list->id}}" data-toggle="tab">{{$list->category_name}}</a></li>
+                    <li class=""><a href="{{$list->id}}" data-toggle="tab">{{$list->category_name}}</a></li>
                  @endforeach
                   </ul>
                   <!-- Tab panes -->
@@ -254,7 +254,7 @@
               <div class="aa-support-single">
                 <span class="fa fa-truck"></span>
                 <h4>FREE SHIPPING</h4>
-                <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nobis.</P>
+                {{-- <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nobis.</P> --}}
               </div>
             </div>
             <!-- single support -->
@@ -262,7 +262,7 @@
               <div class="aa-support-single">
                 <span class="fa fa-clock-o"></span>
                 <h4>30 DAYS MONEY BACK</h4>
-                <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nobis.</P>
+                {{-- <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nobis.</P> --}}
               </div>
             </div>
             <!-- single support -->
@@ -270,7 +270,7 @@
               <div class="aa-support-single">
                 <span class="fa fa-phone"></span>
                 <h4>SUPPORT 24/7</h4>
-                <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nobis.</P>
+                {{-- <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, nobis.</P> --}}
               </div>
             </div>
           </div>

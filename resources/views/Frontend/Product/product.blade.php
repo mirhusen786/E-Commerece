@@ -207,6 +207,7 @@
                      <a href="#"><span class="fa fa-star-o"></span></a>
                      <a href="#"><span class="fa fa-star-o"></span></a>
                    </div>
+                   
                    <!-- review form -->
                    <form action="" class="aa-review-form">
                       <div class="form-group">

@@ -249,8 +249,8 @@
                       <p><span class="fa fa-envelope"></span>samirhusen18@gmail.com</p>
                     </address>
                     <div class="aa-footer-social">
-                      <a href="#"><span class="fa fa-facebook"></span></a>
-                      <a href="#"><span class="fa fa-twitter"></span></a>
+                      <a href="https://www.facebook.com/mirhusen786"><span class="fa fa-facebook"></span></a>
+                      <a href="https://twitter.com/?lang=en"><span class="fa fa-twitter"></span></a>
                       <a href="#"><span class="fa fa-google-plus"></span></a>
                       <a href="#"><span class="fa fa-youtube"></span></a>
                     </div>
